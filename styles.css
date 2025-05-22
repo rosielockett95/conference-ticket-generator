@@ -1,3 +1,21 @@
 body {
   background-image: url("assets/images/background-desktop.png");
+  font-family: "Inconsolata", monospace;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  text-align: center;
 }

@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Conference ticket generator</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Form starts -->
+    <title>Frontend Mentor | Conference ticket generator</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div><img class="top-logo" src="assets/images/logo-full.svg" /></div>
+      <!-- Form starts -->
 
-  Your Journey to Coding Conf 2025 Starts Here!
+      <div><h1>Your Journey to Coding Conf 2025 Starts Here!</h1></div>
+      <div>Secure your spot at next year's biggest coding conference.</div>
+      <div>Upload Avatar</div>
+      <div>
+        <label for="input-file">
+          <input type="file" accept="image/*" />
+        </label>
+        <div><img src="assets/images/icon-upload.svg" /></div>
+        <div>Drag and drop or click to upload</div>
+      </div>
+      <div class="photo-container">
+        <div><img src="assets/images/icon-info.svg" /></div>
+        <div>Upload your photo (JPG or PNG, max size: 500KB).</div>
+      </div>
 
-  Secure your spot at next year's biggest coding conference.
+      <div>
+        <div>Full Name</div>
+        <div>Email Address</div>
+        example@email.com
+        <div>GitHub Username</div>
+        @yourusername
+        <div><button>Generate My Ticket</button></div>
+      </div>
+    </div>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+    <!-- Form ends -->
 
-  Full Name
+    <!-- Generated tickets starts -->
+    <!-- 
+    Congrats,
+    Full Name! Your ticket is ready. We've emailed your ticket to
+    <!-- Email Address -->
+    <!-- and will send updates in the run up to the event. Coding Conf Jan 31, 2025 /
+    Austin, TX -->
 
-  Email Address
-  example@email.com
+    <!-- Generated tickets ends -->
 
-  GitHub Username
-  @yourusername
-
-  Generate My Ticket
-
-  <!-- Form ends -->
-
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
