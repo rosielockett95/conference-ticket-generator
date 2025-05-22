@@ -30,16 +30,22 @@
       <div><h1>Your Journey to Coding Conf 2025 Starts Here!</h1></div>
       <div>Secure your spot at next year's biggest coding conference.</div>
       <div>Upload Avatar</div>
-      <div>
-        <label for="input-file">
-          <input type="file" accept="image/*" />
+      <div class="upload-container">
+        <label for="input-file" id="drop-area">
+          <input type="file" accept="image/*" id="input-file" hidden />
+          <div class="inner-label-container">
+            <div><img src="assets/images/icon-upload.svg" /></div>
+            <div>Drag and drop or click to upload</div>
+          </div>
         </label>
-        <div><img src="assets/images/icon-upload.svg" /></div>
-        <div>Drag and drop or click to upload</div>
       </div>
       <div class="photo-container">
         <div><img src="assets/images/icon-info.svg" /></div>
-        <div>Upload your photo (JPG or PNG, max size: 500KB).</div>
+        <div>
+          <p class="upload-font">
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </p>
+        </div>
       </div>
 
       <div>
