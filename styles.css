@@ -4,14 +4,18 @@ body {
   color: white;
 }
 
+.tg-form {
+  padding: 0 50px;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  width: 50%;
-  align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 h1 {
@@ -20,10 +24,30 @@ h1 {
   text-align: center;
 }
 
+.main-text {
+  font-size: 25px;
+}
+
 .upload-container {
   border: 2px dashed grey;
   padding: 20px;
   border-radius: 10px;
+  margin-top: 5px;
+}
+
+.upload-container,
+#drop-area,
+button,
+.input {
+  transition: opacity 0.5s ease;
+}
+
+.upload-container:hover,
+#drop-area:hover,
+button:hover,
+.input:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .inner-label-container {
@@ -41,4 +65,30 @@ h1 {
 
 .upload-font {
   font-size: 10px;
+}
+
+.input-form {
+  display: grid;
+}
+
+.input {
+  padding: 10px;
+  border: solid 4px rgba(63, 60, 61, 0.28);
+  background: none;
+  border-radius: 10px;
+}
+
+.input-header {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: hsl(7, 71%, 60%);
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 800;
+  font-size: 0.9rem;
 }

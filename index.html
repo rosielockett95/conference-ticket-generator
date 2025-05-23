@@ -28,34 +28,50 @@
       <!-- Form starts -->
 
       <div><h1>Your Journey to Coding Conf 2025 Starts Here!</h1></div>
-      <div>Secure your spot at next year's biggest coding conference.</div>
-      <div>Upload Avatar</div>
-      <div class="upload-container">
-        <label for="input-file" id="drop-area">
-          <input type="file" accept="image/*" id="input-file" hidden />
-          <div class="inner-label-container">
-            <div><img src="assets/images/icon-upload.svg" /></div>
-            <div>Drag and drop or click to upload</div>
-          </div>
-        </label>
+      <div class="main-text">
+        Secure your spot at next year's biggest coding conference.
       </div>
-      <div class="photo-container">
-        <div><img src="assets/images/icon-info.svg" /></div>
-        <div>
-          <p class="upload-font">
-            Upload your photo (JPG or PNG, max size: 500KB).
-          </p>
+      <form class="tg-form">
+        <div>Upload Avatar</div>
+        <div class="upload-container">
+          <label for="input-file" id="drop-area">
+            <input type="file" accept="image/*" id="input-file" hidden />
+            <div class="inner-label-container">
+              <div><img src="assets/images/icon-upload.svg" /></div>
+              <div>Drag and drop or click to upload</div>
+            </div>
+          </label>
         </div>
-      </div>
+        <div class="photo-container">
+          <div><img src="assets/images/icon-info.svg" /></div>
+          <div>
+            <p class="upload-font">
+              Upload your photo (JPG or PNG, max size: 500KB).
+            </p>
+          </div>
+        </div>
 
-      <div>
-        <div>Full Name</div>
-        <div>Email Address</div>
-        example@email.com
-        <div>GitHub Username</div>
-        @yourusername
+        <div class="input-header">Full Name</div>
+        <input type="text" id="fname" class="input" name="fname" />
+        <div class="input-header">Email Address</div>
+        <input
+          class="input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@email.com"
+        />
+        <div class="input-header">GitHub Username</div>
+        <input
+          class="input"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="@yourusername"
+        />
+
         <div><button>Generate My Ticket</button></div>
-      </div>
+      </form>
     </div>
 
     <!-- Form ends -->
