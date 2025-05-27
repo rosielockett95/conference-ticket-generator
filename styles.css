@@ -67,6 +67,29 @@ button:hover,
   font-size: 10px;
 }
 
+.upload-remove-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 5px;
+  margin-top: 1rem;
+}
+
+.remove-btns {
+  padding: 8px;
+  font-size: 12px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(122 118 118 / 69%);
+  opacity: 0.5;
+  color: white;
+}
+
+.remove-btns:hover {
+  cursor: pointer;
+}
+
 .input-form {
   display: grid;
 }
@@ -83,7 +106,7 @@ button:hover,
   margin-bottom: 10px;
 }
 
-button {
+.generate-btn {
   margin-top: 10px;
   padding: 10px;
   background-color: hsl(7, 71%, 60%);
