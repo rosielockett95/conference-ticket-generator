@@ -35,17 +35,25 @@ h1 {
   margin-top: 5px;
 }
 
-.upload-container,
-#drop-area,
+.upload-hover,
 button,
-.input {
+.input,
+.remove-btns {
   transition: opacity 0.5s ease;
 }
 
-.upload-container:hover,
-#drop-area:hover,
 button:hover,
 .input:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.remove-btns:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.upload-hover:hover {
   cursor: pointer;
   opacity: 0.5;
 }
@@ -86,10 +94,6 @@ button:hover,
   color: white;
 }
 
-.remove-btns:hover {
-  cursor: pointer;
-}
-
 .input-form {
   display: grid;
 }
@@ -99,6 +103,7 @@ button:hover,
   border: solid 4px rgba(63, 60, 61, 0.28);
   background: none;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .input-header {
@@ -125,6 +130,8 @@ input {
   width: 100px;
   background-size: cover;
   background-repeat: no-repeat;
+  border: 2px solid grey;
+  border-radius: 10px;
 }
 
 .hidden {

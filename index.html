@@ -31,10 +31,10 @@
       <div class="main-text">
         Secure your spot at next year's biggest coding conference.
       </div>
-      <form class="tg-form">
+      <form class="tg-form" id="tg-form">
         <div>Upload Avatar</div>
-        <div class="upload-container">
-          <label for="input-file" id="drop-area">
+        <div class="upload-container upload-hover" id="hover-box">
+          <label for="input-file" id="drop-area" class="upload-hover">
             <input type="file" accept="image/*" id="input-file" hidden />
             <div class="inner-label-container">
               <div id="img-view" class="hidden"></div>
@@ -60,6 +60,7 @@
 
         <div class="input-header">Full Name</div>
         <input type="text" id="fname" class="input" name="fname" />
+        <div id="error"></div>
         <div class="input-header">Email Address</div>
         <input
           class="input"

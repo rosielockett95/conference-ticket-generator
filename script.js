@@ -5,6 +5,22 @@ const imageIcon = document.getElementById("upload-icon");
 const uploadText = document.getElementById("upload-text");
 const changeButtons = document.getElementById("change-btns");
 const removeButton = document.getElementById("remove-btn");
+const uploadHover = document.getElementById("hover-box");
+const form = document.getElementById("tg-form");
+const firstName = document.getElementById("fname");
+const errorElement = document.getElementById("error");
+
+form.addEventListener("submit", (e) => {
+  let messages = [];
+  e.preventDefault();
+  if ((firstName.value === "") | (firstName.value == null)) {
+    messages.push("name is required");
+  }
+
+  if (messages.length > 0) {
+    errorElement.innerText = messages.join(" , ");
+  }
+});
 
 inputFile.addEventListener("change", uploadImage);
 
@@ -19,6 +35,8 @@ function uploadImage() {
   uploadText.classList.add("hidden");
   imageView.classList.remove("hidden");
   changeButtons.classList.remove("hidden");
+  uploadHover.classList.remove("upload-hover");
+  dropArea.classList.remove("upload-hover");
   inputFile.addEventListener("click", clickListener);
 }
 
