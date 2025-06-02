@@ -5,20 +5,40 @@ const imageIcon = document.getElementById("upload-icon");
 const uploadText = document.getElementById("upload-text");
 const changeButtons = document.getElementById("change-btns");
 const removeButton = document.getElementById("remove-btn");
+const changeButton = document.getElementById("change-btn");
 const uploadHover = document.getElementById("hover-box");
 const form = document.getElementById("tg-form");
 const firstName = document.getElementById("fname");
 const errorElement = document.getElementById("error");
+const emailAddress = document.getElementById("email");
+const errorElementEmail = document.getElementById("email-error");
+const photoError = document.getElementById("photo-error");
 
 form.addEventListener("submit", (e) => {
+  const isEmail = /^.+@.+$/.test(emailAddress.value);
+  let err = false;
+
   let messages = [];
-  e.preventDefault();
+  let messagesTwo = [];
+
   if ((firstName.value === "") | (firstName.value == null)) {
     messages.push("name is required");
   }
 
   if (messages.length > 0) {
     errorElement.innerText = messages.join(" , ");
+    err = true;
+  }
+
+  if (!isEmail) {
+    messagesTwo.push("Email is formatted incorrectly.");
+  }
+
+  if (messagesTwo.length > 0) {
+    errorElementEmail.innerText = messagesTwo;
+    err = true;
+
+    if (err) e.preventDefault();
   }
 });
 
@@ -41,6 +61,7 @@ function uploadImage() {
 }
 
 removeButton.addEventListener("click", removeImage);
+changeButton.addEventListener("click", removeImage);
 
 function removeImage() {
   imageView.style.backgroundImage = "none";
@@ -48,4 +69,6 @@ function removeImage() {
   uploadText.classList.remove("hidden");
   imageView.classList.add("hidden");
   changeButtons.classList.add("hidden");
+  uploadHover.classList.add("upload-hover");
+  dropArea.classList.add("upload-hover");
 }

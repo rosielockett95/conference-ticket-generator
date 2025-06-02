@@ -31,7 +31,7 @@
       <div class="main-text">
         Secure your spot at next year's biggest coding conference.
       </div>
-      <form class="tg-form" id="tg-form">
+      <form class="tg-form" id="tg-form" novalidate>
         <div>Upload Avatar</div>
         <div class="upload-container upload-hover" id="hover-box">
           <label for="input-file" id="drop-area" class="upload-hover">
@@ -41,11 +41,12 @@
               <div id="upload-icon">
                 <img src="assets/images/icon-upload.svg" />
               </div>
+              <div id="photo-error"></div>
               <div id="upload-text">Drag and drop or click to upload</div>
             </div>
             <div class="upload-remove-btns hidden" id="change-btns">
               <button class="remove-btns" id="remove-btn">Remove image</button>
-              <button class="remove-btns" id="remove-btn">Change image</button>
+              <button class="remove-btns" id="change-btn">Change image</button>
             </div>
           </label>
         </div>
@@ -61,6 +62,7 @@
         <div class="input-header">Full Name</div>
         <input type="text" id="fname" class="input" name="fname" />
         <div id="error"></div>
+
         <div class="input-header">Email Address</div>
         <input
           class="input"
@@ -69,6 +71,7 @@
           name="email"
           placeholder="example@email.com"
         />
+        <div id="email-error"></div>
         <div class="input-header">GitHub Username</div>
         <input
           class="input"

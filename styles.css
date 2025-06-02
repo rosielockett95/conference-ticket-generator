@@ -103,7 +103,8 @@ button:hover,
   border: solid 4px rgba(63, 60, 61, 0.28);
   background: none;
   border-radius: 10px;
-  margin-bottom: 20px;
+  color: white;
+  margin-bottom: 5px;
 }
 
 .input-header {
@@ -132,6 +133,11 @@ input {
   background-repeat: no-repeat;
   border: 2px solid grey;
   border-radius: 10px;
+}
+
+#error,
+#email-error {
+  margin-bottom: 18px;
 }
 
 .hidden {
