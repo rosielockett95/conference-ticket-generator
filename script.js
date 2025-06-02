@@ -16,10 +16,14 @@ const photoError = document.getElementById("photo-error");
 
 form.addEventListener("submit", (e) => {
   const isEmail = /^.+@.+$/.test(emailAddress.value);
+  let file = inputFile.files[0];
   let err = false;
+  const limit = 500;
+  const size = file.size / 1024;
 
   let messages = [];
   let messagesTwo = [];
+  let messagesThree = [];
 
   if ((firstName.value === "") | (firstName.value == null)) {
     messages.push("name is required");
@@ -36,6 +40,15 @@ form.addEventListener("submit", (e) => {
 
   if (messagesTwo.length > 0) {
     errorElementEmail.innerText = messagesTwo;
+    err = true;
+  }
+
+  if (size > limit) {
+    messagesThree.push("File is too large. Please upload a photo under 500kb");
+  }
+
+  if (messagesThree.length > 0) {
+    photoError.innerText = messagesThree;
     err = true;
 
     if (err) e.preventDefault();
