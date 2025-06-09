@@ -3,7 +3,7 @@ const inputFile = document.getElementById("input-file");
 const imageView = document.getElementById("img-view");
 const imageIcon = document.getElementById("upload-icon");
 const uploadText = document.getElementById("upload-text");
-const changeButtons = document.getElementById("change-btns");
+const allButtons = document.getElementById("change-btns");
 const removeButton = document.getElementById("remove-btn");
 const changeButton = document.getElementById("change-btn");
 const uploadHover = document.getElementById("hover-box");
@@ -13,64 +13,101 @@ const errorElement = document.getElementById("error");
 const emailAddress = document.getElementById("email");
 const errorElementEmail = document.getElementById("email-error");
 const photoError = document.getElementById("photo-error");
+const gitUserName = document.getElementById("git-username");
+const inputtedGitName = document.getElementById("github-username");
+const gitError = document.getElementById("git-error");
+const imageError = document.getElementById("upload-font");
+const ticketName = document.getElementById("inputted-name");
+const conferenceName = document.getElementById("inputted-name-two");
+const ticketEmail = document.getElementById("inputted-email");
+const ticketPhoto = document.getElementById("photo-avatar");
+const imageAvatar = document.getElementById("avatar-image");
+const mainContainer = document.getElementById("main-container");
+const congratsText = document.getElementById("congrats-text");
+const conferenceTicket = document.getElementById("conference-ticket");
+const file = inputFile.files[0];
+let imgLink;
 
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
   const isEmail = /^.+@.+$/.test(emailAddress.value);
-  let file = inputFile.files[0];
-  let err = false;
   const limit = 500;
-  const size = file.size / 1024;
-
+  let file = inputFile.files[0];
   let messages = [];
-  let messagesTwo = [];
-  let messagesThree = [];
 
-  if ((firstName.value === "") | (firstName.value == null)) {
-    messages.push("name is required");
+  if (!file) {
+    messages.push({ el: photoError, message: "File must be uploaded" });
   }
 
-  if (messages.length > 0) {
-    errorElement.innerText = messages.join(" , ");
-    err = true;
+  if ((firstName.value === "") | (firstName.value == null)) {
+    messages.push({ el: errorElement, message: "Name is required" });
   }
 
   if (!isEmail) {
-    messagesTwo.push("Email is formatted incorrectly.");
+    messages.push({
+      el: errorElementEmail,
+      message: "Email is formatted incorrectly",
+    });
   }
 
-  if (messagesTwo.length > 0) {
-    errorElementEmail.innerText = messagesTwo;
-    err = true;
+  if (gitUserName.value === "") {
+    messages.push({ el: gitError, message: "Field cannot be empty" });
   }
 
-  if (size > limit) {
-    messagesThree.push("File is too large. Please upload a photo under 500kb");
+  if (file) {
+    const size = file.size / 1000;
+
+    if (size > limit) {
+      messages.push({
+        el: photoError,
+        message: "File is too large. Please upload a photo under 500kb",
+      });
+    }
   }
 
-  if (messagesThree.length > 0) {
-    photoError.innerText = messagesThree;
-    err = true;
+  if (messages.length) {
+    for (let i = 0; i < messages.length; i++) {
+      const message = messages[i];
 
-    if (err) e.preventDefault();
+      message.el.innerText = message.message;
+    }
+
+    return;
   }
+
+  function submitForm() {
+    mainContainer.classList.add("hidden");
+    congratsText.classList.remove("hidden");
+    conferenceTicket.classList.remove("hidden");
+    ticketName.innerHTML = firstName.value + "!";
+    ticketEmail.innerHTML = emailAddress.value;
+    imageAvatar.src = imgLink;
+    conferenceName.innerHTML = firstName.value;
+    inputtedGitName.innerHTML = "@" + gitUserName.value;
+  }
+
+  form.submit;
+  submitForm();
 });
 
-inputFile.addEventListener("change", uploadImage);
+// inputFile.addEventListener("change", uploadImage);
 
 function clickListener(e) {
   e.preventDefault();
 }
 
 function uploadImage() {
-  let imgLink = URL.createObjectURL(inputFile.files[0]);
+  imgLink = URL.createObjectURL(inputFile.files[0]);
   imageView.style.backgroundImage = `url(${imgLink})`;
   imageIcon.classList.add("hidden");
   uploadText.classList.add("hidden");
   imageView.classList.remove("hidden");
-  changeButtons.classList.remove("hidden");
+  removeButton.classList.remove("hidden");
+  changeButton.classList.remove("hidden");
+  allButtons.classList.remove("hidden");
   uploadHover.classList.remove("upload-hover");
   dropArea.classList.remove("upload-hover");
-  inputFile.addEventListener("click", clickListener);
+  // inputFile.addEventListener("click", clickListener);
 }
 
 removeButton.addEventListener("click", removeImage);
@@ -81,7 +118,12 @@ function removeImage() {
   imageIcon.classList.remove("hidden");
   uploadText.classList.remove("hidden");
   imageView.classList.add("hidden");
-  changeButtons.classList.add("hidden");
+  allButtons.classList.add("hidden");
+  removeButton.classList.add("hidden");
+  changeButton.classList.add("hidden");
   uploadHover.classList.add("upload-hover");
   dropArea.classList.add("upload-hover");
+  inputFile.value = "";
 }
+
+inputFile.addEventListener("change", uploadImage);
