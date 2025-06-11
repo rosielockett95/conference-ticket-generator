@@ -18,9 +18,21 @@ body {
   z-index: -1;
 }
 
+.top-logo {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 .tg-form {
   padding: 0 50px;
+  width: 80%;
+  margin-top: 10px;
 }
+
+/* .tg-form > div {
+  margin-bottom: 10px;
+} */
 
 .main-container {
   display: flex;
@@ -36,10 +48,14 @@ h1 {
   color: white;
   font-size: 50px;
   text-align: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 .main-text {
-  font-size: 25px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .upload-container {
@@ -80,13 +96,16 @@ button:hover,
 
 .photo-container {
   display: flex;
-  gap: 18px;
+
   align-items: center;
-  padding-bottom: 20px;
+}
+
+.tg-form > div {
+  margin-bottom: 8px;
 }
 
 .upload-font {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .upload-remove-btns {
@@ -166,8 +185,8 @@ input {
 }
 
 #avatar-image {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 10px;
 }
 
@@ -179,20 +198,34 @@ input {
 }
 
 .conference-ticket {
-  background-image: url(assets/images/pattern-ticket.svg);
-  background-repeat: no-repeat;
+  /* background-image: url(assets/images/pattern-ticket.svg);
+  background-repeat: no-repeat; */
   margin-bottom: 20px;
-  background-size: contain;
-  background-position: center;
-  width: 36%;
-  padding: 22px;
+  position: relative;
+  /* background-size: 100% 100%; */
+  /* background-position: center; */
+  /* width: 40%;
+  padding: 16px; */
+}
+
+.ticket-photo {
+}
+
+.logo-image {
+  height: 42px;
 }
 
 .first-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
+  margin-bottom: 42px;
+  /* padding: 20px; */
+}
+
+.first-container > p {
+  margin-left: 69px;
+  font-size: 15px;
 }
 
 .congrats-text {
@@ -220,6 +253,8 @@ input {
 }
 
 #inputted-name-two {
+  font-size: 34px;
+  font-weight: 300;
   margin: 0px;
 }
 
@@ -227,4 +262,16 @@ input {
   text-align: center;
   font-size: 20px;
   line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 14px;
+  left: 12px;
+
+  padding: 6px;
+  gap: 24px;
 }
