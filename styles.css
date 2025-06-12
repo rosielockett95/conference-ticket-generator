@@ -134,7 +134,7 @@ button:hover,
 .input {
   padding: 10px;
   border: solid 4px rgba(63, 60, 61, 0.28);
-  background: none;
+  background-color: rgb(226 80 143 / 0.4);
   border-radius: 10px;
   color: white;
   margin-bottom: 5px;
